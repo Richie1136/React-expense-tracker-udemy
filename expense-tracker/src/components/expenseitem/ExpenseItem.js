@@ -1,10 +1,13 @@
 import React from 'react'
+import './ExpenseItem.css'
 
 const ExpenseItem = () => {
   return (
-    <div>
-      <h2>Expense Item</h2>
-    </div>
+    <>
+      <div>Date</div>
+      <h2>Title</h2>
+      <div>Amount</div>
+    </>
   )
 }
 
