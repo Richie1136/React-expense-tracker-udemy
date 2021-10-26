@@ -1,4 +1,5 @@
 import React from 'react'
+import './Date.css'
 
 const Date = ({ date }) => {
   const month = date.toLocaleString('en-US', { month: 'long' })
@@ -6,10 +7,10 @@ const Date = ({ date }) => {
   const day = date.toLocaleString('en-US', { day: '2-digit' })
 
   return (
-    <div>
-      <div>{month}</div>
-      <div>{year}</div>
-      <div>{day}</div>
+    <div className='date'>
+      <div className='date__month'>{month}</div>
+      <div className='date__year'>{year}</div>
+      <div className='date__day'>{day}</div>
     </div>
   )
 }
