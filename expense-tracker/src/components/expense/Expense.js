@@ -4,15 +4,16 @@ import './Expense.css'
 import Card from '../card/Card'
 import ExpensesFilter from '../expensesfilter/ExpensesFilter'
 
-function Expense({ expense, handleYear }) {
+function Expense({ expense }) {
   const [year, setYear] = useState('2020')
+
   const filteredYear = (selectedYear) => {
     setYear(year)
   }
   return (
     <div>
       <Card className='expenses'>
-        <ExpensesFilter onChangeFilter={filteredYear} />
+        <ExpensesFilter selected={year} onChangeFilter={filteredYear} />
         <ExpenseItem
           title={expense[0].title}
           amount={expense[0].amount}
