@@ -3,9 +3,9 @@ import './NewExpense.css'
 import ExpenseForm from '../expenseform/ExpenseForm'
 
 const NewExpense = () => {
-  const saveExpenseData = (ExpenseDatas) => {
+  const saveExpenseData = (enteredExpenseData) => {
     const expenseData = {
-      ...ExpenseDatas,
+      ...enteredExpenseData,
       id: Math.random().toString()
     }
     console.log(expenseData)
