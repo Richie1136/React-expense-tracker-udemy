@@ -3,6 +3,7 @@ import './ExpensesFilter.css'
 
 const ExpensesFilter = ({ onChangeFilter, selected }) => {
 
+
   const yearChange = (e) => {
     onChangeFilter(e.target.value)
   }

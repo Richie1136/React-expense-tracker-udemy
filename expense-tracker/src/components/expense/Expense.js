@@ -8,13 +8,18 @@ function Expense({ expense }) {
   const [year, setYear] = useState('2020')
 
   const filteredYear = (selectedYear) => {
-    setYear(year)
+    setYear(selectedYear)
   }
+
+  const filteredExpenses = expense.filter((item) => {
+    return item.date.getFullYear().toString() === year
+  })
+
   return (
     <div>
       <Card className='expenses'>
         <ExpensesFilter selected={year} onChangeFilter={filteredYear} />
-        {expense.map((item) => {
+        {filteredExpenses.length === 0 ? <p>No expenses founded</p> : filteredExpenses.map((item) => {
           return <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date} />
         })}
       </Card>
