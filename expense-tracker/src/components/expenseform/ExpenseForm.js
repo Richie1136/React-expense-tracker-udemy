@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import './ExpenseForm.css'
 
-const ExpenseForm = ({ onSaveExpenseData }) => {
+
+const ExpenseForm = ({ onSaveExpenseData, stopEditing }) => {
   const [title, setTitle] = useState('')
   const [amount, setAmount] = useState(0)
   const [date, setDate] = useState(new Date())
+
+
 
   const titleChange = (e) => {
     // If your state updates depends on the previous state, use function form
@@ -47,6 +50,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
         </div>
       </div>
       <div className='new_expense__actions'>
+        <button type='button' onClick={stopEditing}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>
