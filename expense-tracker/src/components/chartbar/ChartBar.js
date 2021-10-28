@@ -1,10 +1,19 @@
 import React from 'react'
 import './ChartBar.css'
 
-const ChartBar = () => {
-  return (
-    <div>
+const ChartBar = ({ data, maxValue, label }) => {
 
+  let barHeight = '0%'
+
+  if (maxValue > 0) {
+    barHeight = Math.round((data / maxValue) * 100) + '%'
+  }
+  return (
+    <div className='chart-bar'>
+      <div className='chart-bar__inner'>
+        <div className='chart-bar__fill' style={{ height: barHeight }}></div>
+      </div>
+      <div className='chart-bar__label'>{label}</div>
     </div>
   )
 }
