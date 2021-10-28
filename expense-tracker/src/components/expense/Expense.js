@@ -15,7 +15,7 @@ function Expense({ expense }) {
       <Card className='expenses'>
         <ExpensesFilter selected={year} onChangeFilter={filteredYear} />
         {expense.map((item) => {
-          return <ExpenseItem title={item.title} amount={item.amount} date={item.date} />
+          return <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date} />
         })}
       </Card>
     </div>
